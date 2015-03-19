@@ -2,10 +2,9 @@
 
 # This script compiles & installs hunspell and the python bindings to hunspell
 #
-# This script is invoked by [`bin/compile`](/).
 
 cd $(pwd)/vendor/hunspell
-tar -zxvf hunspell-0.1.tar.gz
+tar -zxvf hunspell-1.3.3.tar.gz
 cd hunspell-1.3.3
 ./configure --prefix=/app/hunspell
 make install
