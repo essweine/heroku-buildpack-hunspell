@@ -7,7 +7,6 @@ BUILD_DIR=$1
 cat <<EOF
 ---
 config_vars:
-LD_LIBRARY_PATH: /app/hunspell/lib:$LD_LIBRARY_PATH
 
 EOF
 
