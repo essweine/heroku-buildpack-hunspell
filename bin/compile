@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# This script compiles & installs hunspell and the python bindings to hunspell
+#
+# This script is invoked by [`bin/compile`](/).
+
+cd $(pwd)/vendor/hunspell
+tar -zxvf hunspell-0.1.tar.gz
+cd hunspell-1.3.3
+./configure --prefix=/app/hunspell
+make install
+cd ..
+rm -rf hunspell-1.3.3
+
+tar -zxvf hunspell-0.1.tar.gz
+cd hunspell-0.1
+cp ../setup.cfg .
+cat setup.py | sed -s '/hunspell-1.2/hunspell-1.3/' > setup.tmp
+rm setup.py
+mv setup.tmp setup.py
+./setup.py install
+cd ..
+rm -rf hunspell-0.1
+
