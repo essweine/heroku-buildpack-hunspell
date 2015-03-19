@@ -19,7 +19,7 @@ rm setup.py
 mv setup.tmp setup.py
 chmod 755 setup.py
 ./setup.py build
-cp build/lib.linux-x86_64-2.7/hunspell.so /app/.heroku/python/lib/python2.7/site-packages
+cp build/lib.linux-x86_64-2.7/hunspell.so $BUILD_DIR/.heroku/python/lib/python2.7/site-packages
 cd ..
 rm -rf hunspell-0.1
 
