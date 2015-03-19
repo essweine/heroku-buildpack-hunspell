@@ -18,7 +18,8 @@ cat setup.py | sed -e 's/hunspell-1.2/hunspell-1.3/' > setup.tmp
 rm setup.py
 mv setup.tmp setup.py
 chmod 755 setup.py
-./setup.py install
+./setup.py build
+cp hunspell.so /app/.heroku/python/lib/python2.7/site-packages
 cd ..
 rm -rf hunspell-0.1
 
